@@ -11,12 +11,28 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".intents.IntentsActivity"/>
+        <activity android:name=".ux.OrderActivity"
+                android:parentActivityName=".ux.DroidActivity"
+                android:label="Orders">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.example.rnechita.codelabs.ux.DroidActivity" />
+        </activity>
+        <activity
+                android:name=".ux.DroidActivity"
+                android:label="@string/title_activity_droid"
+                android:parentActivityName=".MainActivity"
+                android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.example.rnechita.codelabs.MainActivity" />
+        </activity>
+        <activity android:name=".intents.IntentsActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
